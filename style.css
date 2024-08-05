@@ -91,7 +91,6 @@ a:visited
 }
 
 @keyframes rotateID {
-
     0%
     {
         transform: rotateX(0);
@@ -153,7 +152,7 @@ img[src$=".svg"]
     display: grid;
     grid-template-columns: 1fr 4fr;
     align-items: center;
-    &>img
+    & > img
     {
         justify-self: center;
         padding-right: 5%;
@@ -170,7 +169,7 @@ img[src$=".svg"]
     grid: 2 / 2 / 3 / 3;
     display: grid;
     grid-template-columns: 6fr 2fr;
-    grid-template-rows: 2rem 1fr 2rem 1fr;
+    grid-template-rows: 3rem 1fr 3rem 1fr;
     overflow-y: scroll;
     scrollbar-width: none;
     & ::-webkit-scrollbar
@@ -179,6 +178,7 @@ img[src$=".svg"]
     }
     & > heading
     {
+        background: linear-gradient(white, rgb(236, 236, 236),white);
         font-size: 1.25rem;
         font-weight: 600;
         padding: 0.2rem;
@@ -203,10 +203,10 @@ img[src$=".svg"]
 .content
 {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-template-rows: 500px;
     grid-auto-rows: 500px;
-    gap: 2.5em;
+    gap: 1.5em;
     padding: 2.5em;
     & > div
     {
@@ -236,6 +236,17 @@ img[src$=".svg"]
             background-color: black;
             border-radius: 10px;
         }
+        & a > img
+        {
+            transition-duration: 0.5s;
+            margin-top: 1em;
+            border-radius: 1em;
+            width: 100%;
+        }
+        & a > img:hover
+        {
+            box-shadow: 0 0 0.5em black;
+        }
     }
 }
 
@@ -259,8 +270,14 @@ img[src$=".svg"]
     line-height: 1.5em;
     & > div
     {
+        transition-duration: 0.5s;
+        border-radius: 0.5em;
         padding-left: 0.25em;
-        box-shadow: -0.1em 0.1em 0 var(--light-blue);
+        box-shadow: 0 0 0.1em black;
+    }
+    & > div:hover
+    {
+        box-shadow: 0 0 0.8em black;
     }
 }
 
@@ -283,7 +300,7 @@ img[src$=".svg"]
     gap: 0.25em;
     padding: 0.25em;
     line-height: 1.5em;
-    & > div
+    & a > div
     {
         display: grid;
         place-items: center;
@@ -291,7 +308,8 @@ img[src$=".svg"]
         padding: 0.25em;
         gap: 0.5em;
         border-radius: 0.5em;
-        box-shadow: 0 0 0.25em black;
+        box-shadow: 0 0 0.1em black;
+        transition-duration: 0.5s;
         & > img
         {
             width: 2rem;
@@ -299,6 +317,7 @@ img[src$=".svg"]
         }
         & > handle
         {
+            color: black;
             width: 100%;
             white-space: nowrap;
             overflow: hidden;
@@ -313,5 +332,9 @@ img[src$=".svg"]
             font-size: 0.75em;
             color: rgb(50, 50, 50);
         }
+    }
+    & a > div:hover
+    {
+        box-shadow: 0 0 0.8em black;
     }
 }
