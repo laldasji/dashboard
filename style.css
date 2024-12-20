@@ -33,6 +33,43 @@ a:visited
     color: inherit;
 }
 
+.alert {
+    display: grid;
+    position: relative;
+    place-items: center;
+    grid-template-rows: 1fr 1fr;
+    padding: 2em;
+    border-radius: 1em;
+    position: fixed;
+    place-self: center;
+    backdrop-filter: blur(10px);
+    background-color: rgb(102, 102, 102, 0.5);
+    button#closeAlert {
+        font-size: large;
+        position: relative;
+        background-color: white;
+        padding: 1em;
+        width: 50%;
+        border-radius: 1em;
+        box-shadow: 0.2rem 0.2rem 0 black;
+        border: none;
+        &:hover{
+            background-color: white;
+            box-shadow: 0.3rem 0.3rem 0 black;
+        }
+        &:active {
+            top: 0.15rem;
+            left: 0.15rem;
+            box-shadow: 0.15rem 0.15rem 0 black;
+
+        }
+    }
+}
+
+.remove {
+    display: none;
+}
+
 .header
 {
     background-color: var(--light-blue);
